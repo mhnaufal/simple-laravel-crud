@@ -40,8 +40,8 @@ class StockExchangeController extends Controller
         $validated = $request->validate([
             'name' => ['required', 'max:100', 'unique:App\Models\StockExchange,name'],
             'buy' => ['required', 'integer', 'between:100000,1000000'],
-            'sell' => ['required', 'integer', 'digits_between:50000,1000000'],
-            'lot' => ['required', 'integer', 'digits_between:1']
+            'sell' => ['required', 'integer', 'between:50000,1000000'],
+            'lot' => ['required', 'integer', 'between:1,3']
         ]);
 
         StockExchange::create([
@@ -90,9 +90,30 @@ class StockExchangeController extends Controller
      * @param  \App\Models\StockExchange  $stockExchange
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StockExchange $stockExchange)
+    public function update(Request $request, $id)
     {
-        //
+        //BEFORE
+        // $stocks = StockExchange::findOrFail($id);
+        // return $stocks;
+
+        //AFTER 
+        // return $request;
+        $validated = $request->validate([
+            'name' => ['required', 'max:100', 'unique:App\Models\StockExchange,name'],
+            'buy' => ['required', 'integer', 'between:100000,1000000'],
+            'sell' => ['required', 'integer', 'between:50000,1000000'],
+            'lot' => ['required', 'integer', 'between:1,100']
+        ]);
+
+        StockExchange::where('id', $id)
+            ->update([
+                'name' => $request->name,
+                'buy' => $request->buy,
+                'sell' => $request->sell,
+                'lot' => $request->lot
+            ]);
+
+        return redirect('stocks/index')->with('msg', 'Company updated successfully!');
     }
 
     /**
@@ -101,8 +122,10 @@ class StockExchangeController extends Controller
      * @param  \App\Models\StockExchange  $stockExchange
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StockExchange $stockExchange)
+    public function destroy($id)
     {
-        //
+        $stocks = StockExchange::findOrFail($id);
+        StockExchange::where('id', $id)->delete();
+        return redirect('stocks/index')->with('msg', 'Company deleted successfully');
     }
 }

@@ -8,7 +8,8 @@
         <h3>Edit {{$stockExchange->name}}</h3>
         <div class="row">
             <div class="col-6">
-                <form method="POST" action="/stocks">
+                <form method="POST" action="/stocks/{{$stockExchange->id}}">
+                    @method('PATCH')
                     @csrf
                     <div class="mb-3">
                         <label for="Name" class="form-label">Company Name</label>
@@ -51,7 +52,11 @@
                         <div id="lot" class="form-text">Minimum lot available is 1</div>
                     </div>
                     <button type="submit" class="btn btn-primary btn-sm">Update</button>
-                    <a href=""><button class="btn btn-danger btn-sm ms-2">Delete</button></a>
+                    <form method="POST" action="{{ $stockExchange->id }}" class="d-inline">
+                        @method('DELETE')
+                        @csrf
+                        <a href=""><button class="btn btn-danger btn-sm ms-2">Delete</button></a>
+                    </form>
                 </form>
                 <a href="/stocks/show/{{ $stockExchange->id }}" class="card-link"><button class="btn btn-outline-dark btn-sm my-3"> Cancel </button></a>
             </div>

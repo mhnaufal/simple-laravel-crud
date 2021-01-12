@@ -16,6 +16,7 @@ use App\Http\Controllers\StockExchangeController;
 */
 
 /* NON_ADMIN - HOME PAGE */
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -44,3 +45,7 @@ Route::get('/stocks/{stock}/edit', [StockExchangeController::class, 'edit'])->na
 
 /* NON_ADMIN - SEE DETAILS OF SELECTED STOCK'S COMPANY*/
 Route::get('/stocks/show/{stock}', [StockExchangeController::class, 'show'])->name('show');
+
+Route::patch('/stocks/{stock}', [StockExchangeController::class, 'update'])->name('update');
+
+Route::delete('/stocks/{stock}', [StockExchangeController::class, 'destroy'])->name('delete');
