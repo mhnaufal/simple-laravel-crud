@@ -19,7 +19,7 @@
  <body>
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
          <div class="container-fluid">
-             <a class="navbar-brand" href="/">
+             <a class="navbar-brand ms-2" href="/">
                  <i class="fab fa-ethereum"></i>
                  Ether Securities
              </a>
@@ -48,7 +48,7 @@
                          </ul>
                      </li>
                  </ul>
-                 <form class="d-flex">
+                 <form class="d-flex me-1">
                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                      <button class="btn btn-outline-secondary" type="submit">Search</button>
                  </form>

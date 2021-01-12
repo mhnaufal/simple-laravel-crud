@@ -17,8 +17,8 @@
              <li class="list-group-item"><strong>Available lots:</strong> {{$stockExchange->lot}} </li>
          </ul>
          <div class="card-body">
-             <a href="/stocks/index" class="card-link">Back</a>
-             <a href="/stocks/create" class="card-link">Edit</a>
+             <a href="/stocks/index" class="card-link"><button class="btn btn-outline-dark btn-sm">Back</button></a>
+             <a href="/stocks/{{ $stockExchange->id}}/edit" class="card-link"><button class="btn btn-outline-warning btn-sm">Edit</button></a>
          </div>
      </div>
  </body>

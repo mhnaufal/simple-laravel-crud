@@ -9,9 +9,17 @@
          <br>
          <br>
          <table class="table table-striped table-hover justify-content-center caption-top">
-             <caption>Server time: 10-01-2021 10:21 WIB</caption>
              <h3><strong>List All Stocks</strong></h3>
+             @if (session('msg'))
+             <div class="alert alert-success">
+                 {{ session('msg') }}
+             </div>
+             @endif
              <hr>
+             <div class="d-flex bd-highlight mb-3">
+                 <p class="me-auto p-2 bd-highlight">Server time: 10-01-2021 10:21 WIB</p>
+                 <a href="/stocks/create" class="p-2 bd-highlight"><button class=" btn btn-primary btn-sm">New Stock</button></a>
+             </div>
              <thead>
                  <tr>
                      <th scope="col">Trading ID</th>
@@ -53,8 +61,8 @@
                          <mark> {{ $stock->lot }} </mark>
                      </td>
                      <td>
-                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy</button>
-                         <a href="/stocks/show/{{ $stock->id }}" class="link-primary">Details</a>
+                         <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Buy</button>
+                         <a href="/stocks/show/{{ $stock->id }}"><button class="btn btn-outline-dark btn-sm">Details</button></a>
                      </td>
                  </tr>
                  @endforeach

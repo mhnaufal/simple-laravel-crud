@@ -26,7 +26,7 @@ class StockExchangeController extends Controller
      */
     public function create()
     {
-        //
+        return view('stocks.create', [StockExchangeController::class, 'create']);
     }
 
     /**
@@ -37,7 +37,23 @@ class StockExchangeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'name' => ['required', 'max:100', 'unique:App\Models\StockExchange,name'],
+            'buy' => ['required', 'integer', 'between:100000,1000000'],
+            'sell' => ['required', 'integer', 'digits_between:50000,1000000'],
+            'lot' => ['required', 'integer', 'digits_between:1']
+        ]);
+
+        StockExchange::create([
+            'name' => $request->name,
+            'buy' => $request->buy,
+            'sell' => $request->sell,
+            'lot' => $request->lot
+        ]);
+
+        // StockExchange::create($request->all());
+
+        return redirect('stocks.index')->with('msg', 'Company added successfully!');
     }
 
     /**
@@ -49,7 +65,7 @@ class StockExchangeController extends Controller
     public function show($id)   //CHANGE INTO $id FOR SIMPLICITY
     {
         $stocks = StockExchange::findOrFail($id);
-        return view('/stocks/show', ['stockExchange' => $stocks]);
+        return view('/stocks/show', ['stockExchange' => $stocks]); //YANG DIKIRIM stockExchange
         // return $stocks;
     }
 
@@ -59,9 +75,12 @@ class StockExchangeController extends Controller
      * @param  \App\Models\StockExchange  $stockExchange
      * @return \Illuminate\Http\Response
      */
-    public function edit(StockExchange $stockExchange)
+    public function edit($id)
     {
-        //
+        $stocks = StockExchange::findOrFail($id);
+
+        return view('stocks.edit', ['stockExchange' => $stocks]);
+        // return $stocks;
     }
 
     /**

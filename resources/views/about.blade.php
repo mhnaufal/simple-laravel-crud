@@ -14,7 +14,7 @@
 
 <body>
     <h1>About</h1>
-    <button><a href="/stocks/index">Workspace</a></button>
+    <a href="/stocks/index"><button class="btn btn-outline-dark btn-sm">Workspace</button></a>
 
 
     <!-- Optional JavaScript; choose one of the two! -->

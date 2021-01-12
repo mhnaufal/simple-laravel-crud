@@ -18,7 +18,7 @@ class CreateStockExchangesTable extends Migration
             $table->string('name')->unique();
             $table->integer('buy')->default(10000);
             $table->integer('sell')->default(12000);
-            $table->integer('lot');
+            $table->integer('lot'); //AVAILABLE LOTS
             $table->timestamps();
         });
     }
