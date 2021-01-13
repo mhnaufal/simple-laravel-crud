@@ -29,7 +29,7 @@ You can also use [Docker](https://www.docker.com/) to run this code if you wish 
 
 2. Download or clone the repository
 
-> git clone https://github.com/mhnaufal/laravel-crud.git
+> git clone https://github.com/mhnaufal/simple-laravel-crud.git
 
 ...or simply download the zip and extract it
 
