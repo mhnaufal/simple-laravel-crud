@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        $this->call(StockExchangeSeeder::class); //WE NEED THIS TO USE OTHER SEED BESIDE DatabaseSeeder.php
     }
 }

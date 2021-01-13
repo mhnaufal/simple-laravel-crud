@@ -1,6 +1,5 @@
 # Simple CRUD using Laravel
 
-
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
@@ -8,7 +7,7 @@ Welcome to my second repo about CRUD implementation and in this repo instead of 
 
 ## Features
 
-Basic CRUD (Create, Read, Update, Delete) nothing special (yet & again). Hope I can add the search feature and also try to make some API calls. 
+Basic CRUD (Create, Read, Update, Delete) nothing special (yet & again).
 
 ## Motivation
 
@@ -18,11 +17,11 @@ It's just practice make perfect repository.
 
 To run this code you need:
 
-- [Laravel](https://laravel.com/)
-- [Composer](https://getcomposer.org/)
-- [XAMPP](https://www.apachefriends.org/download.html)
+-   [Laravel](https://laravel.com/)
+-   [Composer](https://getcomposer.org/)
+-   [XAMPP](https://www.apachefriends.org/download.html)
 
-You can also use [Docker](https://www.docker.com/) to run this code if you wish but in this repo I am using the Composer way. 
+You can also use [Docker](https://www.docker.com/) to run this code if you wish but in this repo I am using the Composer way.
 
 ## Installation or Getting Started
 
@@ -32,9 +31,9 @@ You can also use [Docker](https://www.docker.com/) to run this code if you wish 
 
 > git clone https://github.com/mhnaufal/laravel-crud.git
 
-or simply download the zip and extract it
+...or simply download the zip and extract it
 
-3. Open the folder in code editor of your choice and also open up a terminal 
+3. Open the folder in code editor of your choice and also open up a terminal
 
 4. In the terminal, move to the cloned folder
 
@@ -68,12 +67,31 @@ or simply download the zip and extract it
 
 > php artisan serve
 
-13. Enjoy :grin:
+Below is how to use the seed
 
-> ! There is no seed yet for now so maybe you need to add some data manually through the database 
+1. Open up terminal
+
+2. Run the seed
+
+> php artisan db:seed
+
+Enjoy :grin:
+
+## To Do
+
+-   Add description for the data in show route (detail)
+-   Authorization for admin and login page
+-   Using more API on the list
+-   Designing the frontend
+-   Purchase features
+-   Search features
+-   .
+-   .
+-   .
+-   Deploy?
 
 ## Disclaimer
 
-There is an [Ethereum](https://ethereum.org/en/) image and icon that I am using in this code and I am using it only for learning materials and there is no intention of taking copyright. 
+There is an [Ethereum](https://ethereum.org/en/) image and icon that I am using in this code and I am using it only for learning materials and there is no intention of taking copyright.
 
-Thanks! :smile:
+Feel free to ask me anything, Thanks! :smile:

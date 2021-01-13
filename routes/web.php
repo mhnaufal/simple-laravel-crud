@@ -23,7 +23,8 @@ Route::get('/apitest', function () {
     // return view('apitest', ['api' => $response['message']]);
     // return view('apitest', ['api' => $response]);
 
-    $apikey = 'dca61bcc';
+    /* I'm sorry but you need to use your own apikey */
+    $apikey = '';
     $s = 'Mission Impossible';
     $response2 = Http::get("http://www.omdbapi.com/?apikey={$apikey}&s={$s}");
     // return $response2->json();

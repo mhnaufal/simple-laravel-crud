@@ -98,7 +98,7 @@ class StockExchangeController extends Controller
         //AFTER 
         // return $request;
         $validated = $request->validate([
-            'name' => ['required', 'max:100', 'unique:App\Models\StockExchange,name'],
+            'name' => ['required', 'max:100'],
             'buy' => ['required', 'integer', 'between:100000,1000000'],
             'sell' => ['required', 'integer', 'between:50000,1000000'],
             'lot' => ['required', 'integer', 'between:1,100']

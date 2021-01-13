@@ -23,7 +23,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Buy" class="form-label">Initial Purchase Price</label>
-                        <input type="number" class="form-control @error('buy') is-invalid @enderror" name="buy" step="50000" min="100000" max="1000000" id="Buy" value="{{ $stockExchange->buy }}" autocomplete="off">
+                        <input type="number" class="form-control @error('buy') is-invalid @enderror" name="buy" min="100000" max="1000000" id="Buy" value="{{ $stockExchange->buy }}" autocomplete="off">
                         @error('buy')
                         <div id="validationServer03Feedback" class="invalid-feedback">
                             {{$message}}
@@ -33,7 +33,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Sell" class="form-label">Initial Selling Price</label>
-                        <input type="number" class="form-control @error('sell') is-invalid @enderror" name="sell" step="50000" min="50000" max="1000000" id="Sell" value="{{ $stockExchange->sell }}" autocomplete="off">
+                        <input type="number" class="form-control @error('sell') is-invalid @enderror" name="sell" min="50000" max="1000000" id="Sell" value="{{ $stockExchange->sell }}" autocomplete="off">
                         @error('sell')
                         <div id="validationServer03Feedback" class="invalid-feedback">
                             {{$message}}
