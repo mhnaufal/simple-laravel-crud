@@ -41,7 +41,7 @@ class StockExchangeController extends Controller
             'name' => ['required', 'max:100', 'unique:App\Models\StockExchange,name'],
             'buy' => ['required', 'integer', 'between:100000,1000000'],
             'sell' => ['required', 'integer', 'between:50000,1000000'],
-            'lot' => ['required', 'integer', 'between:1,3']
+            'lot' => ['required', 'integer', 'between:1,100']
         ]);
 
         StockExchange::create([
@@ -51,9 +51,8 @@ class StockExchangeController extends Controller
             'lot' => $request->lot
         ]);
 
-        // StockExchange::create($request->all());
-
-        return redirect('stocks.index')->with('msg', 'Company added successfully!');
+        // StockExchange::create($request->all()); //BASED ON $fillable INSIDE THE MODEL
+        return redirect('stocks/index')->with('msg', "{$request->name} added successfully!");    //CAN'T USE . IN REDIRECT
     }
 
     /**
@@ -65,7 +64,7 @@ class StockExchangeController extends Controller
     public function show($id)   //CHANGE INTO $id FOR SIMPLICITY
     {
         $stocks = StockExchange::findOrFail($id);
-        return view('/stocks/show', ['stockExchange' => $stocks]); //YANG DIKIRIM stockExchange
+        return view('/stocks/show', ['stockExchange' => $stocks]); //WHAT IS SENT IS stockExchange
         // return $stocks;
     }
 
@@ -113,7 +112,7 @@ class StockExchangeController extends Controller
                 'lot' => $request->lot
             ]);
 
-        return redirect('stocks/index')->with('msg', 'Company updated successfully!');
+        return redirect('stocks/index')->with('msg', "{$request->name} updated successfully!");
     }
 
     /**

@@ -14,7 +14,7 @@ class AddSoftDeleteToStockExchanges extends Migration
     public function up()
     {
         Schema::table('stock_exchanges', function (Blueprint $table) {
-            $table->softDeletes();
+            $table->dropSoftDeletes();
         });
     }
 

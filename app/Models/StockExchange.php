@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class StockExchange extends Model
 {
+    /* WE ARE NOT USING SOFT DELETE ANYMORE */
+    /* BECAUSE IT MAKE THE DATA STICK */
+    /* IN THE DATABASE */
+    // use SoftDeletes; 
+    
     use HasFactory;
-    use SoftDeletes;
     protected $fillable = [
         'name',
         'buy',

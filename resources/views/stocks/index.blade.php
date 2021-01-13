@@ -27,7 +27,7 @@
                      <th scope="col">Purchase Price (IDR)</th>
                      <th scope="col">Selling Price (IDR)</th>
                      <th scope="col">Lot(s)</th>
-                     <th scope="col">Options lorem</th>
+                     <th scope="col">Options</th>
                  </tr>
              </thead>
              <tbody>
@@ -71,7 +71,7 @@
                  <tr>
                      <td></td>
                      <td> </td>
-                     <td> {{$stock = $stock->buy}} </td>
+                     <td> </td>
                      <td> </td>
                      <td></td>
                  </tr>

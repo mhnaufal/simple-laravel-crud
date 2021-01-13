@@ -14,7 +14,7 @@
                     @csrf
                     <div class="mb-3">
                         <label for="Name" class="form-label">Company Name</label>
-                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="Name" placeholder="ex: SpaceX" value="{{ old('name') }}">
+                        <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="Name" placeholder="ex: SpaceX" value="{{ old('name') }}" autocomplete="off">
                         @error('name')
                         <div id="validationServer03Feedback" class="invalid-feedback">
                             {{$message}}
@@ -24,9 +24,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="Buy" class="form-label">Initial Purchase Price</label>
-                        <input type="number" class="form-control @error('buy') is-invalid @enderror" name="buy" step="50000" min="100000" max="1000000" id="Buy" value="{{old('buy')}}">
+                        <input type="number" class="form-control @error('buy') is-invalid @enderror" name="buy" step="50000" min="100000" max="1000000" id="Buy" value="{{old('buy')}}" autocomplete="off">
                         @error('buy')
-                        <div id="validationServer03Feedback" class="invalid-feedback">
+                        <div id=" validationServer03Feedback" class="invalid-feedback">
                             {{$message}}
                         </div>
                         @enderror
@@ -34,9 +34,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="Sell" class="form-label">Initial Selling Price</label>
-                        <input type="number" class="form-control @error('sell') is-invalid @enderror" name="sell" step="50000" min="50000" max="1000000" id="Sell" value="{{ old('sell') }}">
+                        <input type="number" class="form-control @error('sell') is-invalid @enderror" name="sell" step="50000" min="50000" max="1000000" id="Sell" value="{{ old('sell') }}" autocomplete="off">
                         @error('sell')
-                        <div id="validationServer03Feedback" class="invalid-feedback">
+                        <div id=" validationServer03Feedback" class="invalid-feedback">
                             {{$message}}
                         </div>
                         @enderror
@@ -44,7 +44,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="Lot" class="form-label">Lots Available</label>
-                        <input type="number" class="form-control @error('lot') is-invalid @enderror" name="lot" min="1" max="100" id="Lot" value="{{old('lot')}}">
+                        <input type="number" class="form-control @error('lot') is-invalid @enderror" name="lot" min="1" max="100" id="Lot" value="{{old('lot')}}" autocomplete="off">
                         @error('lot')
                         <div id="validationServer03Feedback" class="invalid-feedback">
                             {{$message}}
