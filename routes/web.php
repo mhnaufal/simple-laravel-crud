@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Http;
 
 //IMPORT THE CONTROLLER FIRST//
 use App\Http\Controllers\StockExchangeController;
@@ -15,8 +16,16 @@ use App\Http\Controllers\StockExchangeController;
 |
 */
 
-/* NON_ADMIN - HOME PAGE */
+/* API */
 
+Route::get('/apitest', function () {
+    $response = Http::get('https://njajal.azurastore.id/api');
+    // return $response['message'];
+    // return view('apitest', ['api' => $response['message']]);
+    return view('apitest', ['api' => $response]);
+});
+
+/* NON_ADMIN - HOME PAGE */
 Route::get('/', function () {
     return view('welcome');
 });

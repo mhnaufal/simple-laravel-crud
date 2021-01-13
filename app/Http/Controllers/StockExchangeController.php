@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\StockExchange;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class StockExchangeController extends Controller
 {
@@ -15,7 +16,6 @@ class StockExchangeController extends Controller
     public function index()
     {
         $stocks = StockExchange::all();
-
         return view('/stocks/index', ['stocks' => $stocks]);
     }
 

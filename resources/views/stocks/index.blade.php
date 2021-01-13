@@ -27,7 +27,7 @@
                      <th scope="col">Purchase Price (IDR)</th>
                      <th scope="col">Selling Price (IDR)</th>
                      <th scope="col">Lot(s)</th>
-                     <th scope="col">Options</th>
+                     <th scope="col">Options lorem</th>
                  </tr>
              </thead>
              <tbody>
